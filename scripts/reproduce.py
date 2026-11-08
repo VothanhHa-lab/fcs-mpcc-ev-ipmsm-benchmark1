@@ -581,8 +581,8 @@ for key, col, nm in [("loss_noiron_Wh_per_km", "#4c72b0", "Cu + inverter"), ("ir
     ax.bar(short, v, bottom=bot, color=col, label=nm)
     bot += v
 ax.set_ylabel("WLTC 3b drive loss (Wh/km)")
-ax.set_ylim(0, 19)
-ax.legend(fontsize=6, ncol=3, loc="upper center")
+ax.set_ylim(0, 16)
+ax.legend(fontsize=6, ncol=3, loc="lower center", bbox_to_anchor=(0.5, 1.01), frameon=False)
 plt.setp(ax.get_xticklabels(), rotation=15, fontsize=6)
 fig.tight_layout()
 P.save(fig, FIG, "Fig12_WLTC_loss_breakdown_with_iron")
