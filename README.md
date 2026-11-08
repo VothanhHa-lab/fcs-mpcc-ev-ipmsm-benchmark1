@@ -3,9 +3,7 @@
 Switching-level simulation benchmark of current control for a low-inductance EV traction IPMSM
 (Model 3-class rear-drive motor reconstructed from public data). Code and data for the manuscript
 
-> T. H. Vo, *A fair simulation benchmark of finite-control-set predictive current control for a
-> low-inductance EV traction IPMSM: neural-network weighting, variable-switching-frequency PWM
-> baselines and stator iron loss* (submitted to *Results in Engineering*).
+> T. H. Vo, *Current-control selection for EV traction inverters under a torque-ripple limit: finite-control-set predictive control versus scheduled-carrier PWM and DPWM over the WLTC* (submitted to *Results in Engineering*).
 
 **Scope:** model-in-the-loop simulation only (no HIL, no hardware). Every number in the paper is
 generated from the CSV files produced by this code. A Vietnamese description is in `README_vi.md`.
