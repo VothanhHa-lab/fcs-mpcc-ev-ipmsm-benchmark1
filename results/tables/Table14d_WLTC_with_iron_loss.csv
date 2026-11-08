@@ -1,0 +1,7 @@
+controller,loss_noiron_Wh_per_km,loss_with_iron_Wh_per_km,iron_Wh_per_km,iron_share_of_drive_loss,iron_fund_Wh_per_km,iron_harm_Wh_per_km,harm_share_of_iron,rank_noiron,rank_with_iron,battery_Wh_per_km_noiron,battery_Wh_per_km_with_iron
+PI-SVPWM 10 kHz,4.081,13.118,9.037,0.689,5.973,3.064,0.339,5,5,92.705,101.742
+PI-SVPWM 3.6 kHz,3.657,12.832,9.175,0.715,5.796,3.379,0.368,4,4,92.281,101.456
+FCS-MPCC lam_sw=0,4.932,14.451,9.519,0.659,6.0,3.519,0.37,6,6,93.556,103.075
+FCS-MPCC best fixed lam_sw,2.816,12.235,9.419,0.77,5.997,3.422,0.363,1,1,91.44,100.859
+FCS-MPCC + LUT lam_sw,2.816,12.235,9.419,0.77,5.997,3.422,0.363,1,1,91.44,100.859
+FCS-MPCC + NN lam_sw,2.825,12.26,9.434,0.77,5.997,3.438,0.364,3,3,91.449,100.884

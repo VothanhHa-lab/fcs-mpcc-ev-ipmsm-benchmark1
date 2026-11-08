@@ -1,0 +1,6 @@
+controller,RMSE_iq_mean,RMSE_iq_std,RMSE_iq_p95,T_rms_mean,T_rms_std,speed_dev_mean,failed_runs,frac_better_than_FCS11
+PI-SVPWM,5.666,0.243,6.074,3.751,0.286,5.955,0,1.0
+Deadbeat-SVPWM,5.521,0.401,6.229,3.944,0.299,6.033,0,1.0
+"FCS-MPCC (1,1)",26.623,2.564,30.49,9.518,0.83,5.948,0,0.0
+FCS-MPCC best fixed,17.503,1.892,20.341,7.124,0.535,5.944,0,1.0
+AI-FCS-MPCC (paper),18.03,1.927,20.974,7.209,0.543,5.936,0,1.0

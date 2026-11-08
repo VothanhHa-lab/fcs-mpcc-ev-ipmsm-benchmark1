@@ -1,0 +1,61 @@
+limit,limit_desc,method,nodes_infeasible,nodes,kind,setting,loss_Wh_per_km,ripple_mean_Nm,ripple_rel_mean_pct,fsw_mean_kHz,viol_time_frac,infeasible_time_frac,loss_vs_PI_VSF_pct
+abs3,3 % of 430 N m = 12.9 N m (absolute),PI-SVPWM,0,76,"scheduled, ideal (per WLTC sample)",continuous schedule,3.1785,4.3652,19.6589,5.1562,0.0,0.0,0.0
+abs3,3 % of 430 N m = 12.9 N m (absolute),PI-SVPWM,0,76,"scheduled, 9x9 LUT (nearest node)",LUT (per operating point),3.1956,4.3319,19.2003,5.4583,0.0,,0.0
+abs3,3 % of 430 N m = 12.9 N m (absolute),PI-SVPWM,0,76,best single setting,PI-SVPWM 5 kHz,3.4399,3.7657,21.2349,4.9979,0.0,,
+abs3,3 % of 430 N m = 12.9 N m (absolute),PI-DPWM1,0,76,"scheduled, ideal (per WLTC sample)",continuous schedule,2.9987,6.4471,28.3483,4.8161,0.0,0.0,-5.6544
+abs3,3 % of 430 N m = 12.9 N m (absolute),PI-DPWM1,0,76,"scheduled, 9x9 LUT (nearest node)",LUT (per operating point),3.0123,6.4497,27.3528,5.2033,0.007,,-5.7373
+abs3,3 % of 430 N m = 12.9 N m (absolute),PI-DPWM1,0,76,best single setting,PI-DPWM1 5 kHz,3.1795,7.4061,41.8452,3.5377,0.0,,
+abs3,3 % of 430 N m = 12.9 N m (absolute),PI-DPWM-I,0,76,"scheduled, ideal (per WLTC sample)",continuous schedule,2.9743,6.377,27.9659,4.8482,0.0,0.0,-6.422
+abs3,3 % of 430 N m = 12.9 N m (absolute),PI-DPWM-I,0,76,"scheduled, 9x9 LUT (nearest node)",LUT (per operating point),2.986,6.4166,27.1656,5.2092,0.0102,,-6.5596
+abs3,3 % of 430 N m = 12.9 N m (absolute),PI-DPWM-I,0,76,best single setting,PI-DPWM-I 5 kHz,3.1617,7.3444,41.4911,3.5419,0.0,,
+abs3,3 % of 430 N m = 12.9 N m (absolute),FCS-MPCC (Ts = 10 us),0,76,"scheduled, ideal (per WLTC sample)",continuous schedule,2.8148,6.2757,32.1912,4.0706,0.0,0.0,-11.4408
+abs3,3 % of 430 N m = 12.9 N m (absolute),FCS-MPCC (Ts = 10 us),0,76,"scheduled, 9x9 LUT (nearest node)",LUT (per operating point),2.8282,5.9257,28.7795,4.5041,0.0,,-11.4961
+abs3,3 % of 430 N m = 12.9 N m (absolute),FCS-MPCC (Ts = 10 us),0,76,best single setting,FCS Ts=10us lam_sw=1000,2.821,6.8393,37.8159,3.472,0.0,,
+abs3,3 % of 430 N m = 12.9 N m (absolute),"FCS-MPCC (Ts, lam_sw)",0,76,"scheduled, ideal (per WLTC sample)",continuous schedule,2.6703,7.3449,35.4969,3.5503,0.0,0.0,-15.9864
+abs3,3 % of 430 N m = 12.9 N m (absolute),"FCS-MPCC (Ts, lam_sw)",0,76,"scheduled, 9x9 LUT (nearest node)",LUT (per operating point),2.6255,7.1482,32.051,3.9101,0.0,,-17.8403
+abs3,3 % of 430 N m = 12.9 N m (absolute),"FCS-MPCC (Ts, lam_sw)",0,76,best single setting,FCS Ts=10us lam_sw=1000,2.821,6.8393,37.8159,3.472,0.0,,
+abs1,1 % of 430 N m = 4.3 N m (absolute),PI-SVPWM,0,76,"scheduled, ideal (per WLTC sample)",continuous schedule,3.3828,3.1085,16.1104,6.378,0.0,0.0,0.0
+abs1,1 % of 430 N m = 4.3 N m (absolute),PI-SVPWM,0,76,"scheduled, 9x9 LUT (nearest node)",LUT (per operating point),3.4169,3.0389,15.4256,6.7844,0.0696,,0.0
+abs1,1 % of 430 N m = 4.3 N m (absolute),PI-SVPWM,0,76,best single setting,PI-SVPWM 10 kHz,4.0794,1.9419,10.9144,9.9976,0.0,,
+abs1,1 % of 430 N m = 4.3 N m (absolute),PI-DPWM1,0,76,"scheduled, ideal (per WLTC sample)",continuous schedule,3.3452,3.4465,18.4326,7.5986,0.0,0.0,-1.1124
+abs1,1 % of 430 N m = 4.3 N m (absolute),PI-DPWM1,0,76,"scheduled, 9x9 LUT (nearest node)",LUT (per operating point),3.374,3.3241,17.3574,8.0749,0.0779,,-1.2552
+abs1,1 % of 430 N m = 4.3 N m (absolute),PI-DPWM1,0,76,best single setting,PI-DPWM1 15 kHz,3.7336,2.4862,14.024,10.2187,0.0,,
+abs1,1 % of 430 N m = 4.3 N m (absolute),PI-DPWM-I,0,76,"scheduled, ideal (per WLTC sample)",continuous schedule,3.315,3.4084,18.2242,7.6027,0.0,0.0,-2.005
+abs1,1 % of 430 N m = 4.3 N m (absolute),PI-DPWM-I,0,76,"scheduled, 9x9 LUT (nearest node)",LUT (per operating point),3.3424,3.2868,17.161,8.0808,0.0779,,-2.1827
+abs1,1 % of 430 N m = 4.3 N m (absolute),PI-DPWM-I,0,76,best single setting,PI-DPWM-I 15 kHz,3.6749,2.4697,13.9357,10.2168,0.0,,
+abs1,1 % of 430 N m = 4.3 N m (absolute),FCS-MPCC (Ts = 10 us),0,76,"scheduled, ideal (per WLTC sample)",continuous schedule,3.5891,3.0705,16.9291,7.6618,0.0,0.0,6.0976
+abs1,1 % of 430 N m = 4.3 N m (absolute),FCS-MPCC (Ts = 10 us),0,76,"scheduled, 9x9 LUT (nearest node)",LUT (per operating point),3.5891,3.0705,16.9291,7.6618,0.0,,5.0378
+abs1,1 % of 430 N m = 4.3 N m (absolute),FCS-MPCC (Ts = 10 us),0,76,best single setting,FCS Ts=10us lam_sw=300,3.5891,3.0705,16.9291,7.6618,0.0,,
+abs1,1 % of 430 N m = 4.3 N m (absolute),"FCS-MPCC (Ts, lam_sw)",0,76,"scheduled, ideal (per WLTC sample)",continuous schedule,3.3305,3.5655,18.7494,6.236,0.0,0.0,-1.5469
+abs1,1 % of 430 N m = 4.3 N m (absolute),"FCS-MPCC (Ts, lam_sw)",0,76,"scheduled, 9x9 LUT (nearest node)",LUT (per operating point),3.334,3.5641,18.8421,6.2514,0.0,,-2.4263
+abs1,1 % of 430 N m = 4.3 N m (absolute),"FCS-MPCC (Ts, lam_sw)",0,76,best single setting,FCS Ts=10us lam_sw=300,3.5891,3.0705,16.9291,7.6618,0.0,,
+rel5,"5 % of demanded torque, floor 3 N m (relative)",PI-SVPWM,0,76,"scheduled, ideal (per WLTC sample)",continuous schedule,3.5722,2.5292,13.3992,7.7081,0.0,0.0,0.0
+rel5,"5 % of demanded torque, floor 3 N m (relative)",PI-SVPWM,0,76,"scheduled, 9x9 LUT (nearest node)",LUT (per operating point),3.5956,2.5654,13.5175,7.8686,0.1731,,0.0
+rel5,"5 % of demanded torque, floor 3 N m (relative)",PI-SVPWM,0,76,best single setting,PI-SVPWM 10 kHz,4.0794,1.9419,10.9144,9.9976,0.0,,
+rel5,"5 % of demanded torque, floor 3 N m (relative)",PI-DPWM1,0,76,"scheduled, ideal (per WLTC sample)",continuous schedule,3.6319,2.5349,13.6191,10.1534,0.0,0.0,1.6728
+rel5,"5 % of demanded torque, floor 3 N m (relative)",PI-DPWM1,0,76,"scheduled, 9x9 LUT (nearest node)",LUT (per operating point),3.6122,2.6123,13.941,10.0382,0.1775,,0.4612
+rel5,"5 % of demanded torque, floor 3 N m (relative)",PI-DPWM1,0,76,best single setting,PI-DPWM1 20 kHz,4.209,1.8737,10.5688,13.5577,0.0,,
+rel5,"5 % of demanded torque, floor 3 N m (relative)",PI-DPWM-I,0,76,"scheduled, ideal (per WLTC sample)",continuous schedule,3.5377,2.5835,13.8634,9.9189,0.0,0.0,-0.9664
+rel5,"5 % of demanded torque, floor 3 N m (relative)",PI-DPWM-I,0,76,"scheduled, 9x9 LUT (nearest node)",LUT (per operating point),3.5231,2.6473,14.1064,9.8493,0.1801,,-2.0153
+rel5,"5 % of demanded torque, floor 3 N m (relative)",PI-DPWM-I,0,76,best single setting,PI-DPWM-I 20 kHz,4.1225,1.8613,10.5038,13.5485,0.0,,
+rel5,"5 % of demanded torque, floor 3 N m (relative)",FCS-MPCC (Ts = 10 us),0,76,"scheduled, ideal (per WLTC sample)",continuous schedule,4.1273,2.2671,12.1224,10.6748,0.0,0.0,15.541
+rel5,"5 % of demanded torque, floor 3 N m (relative)",FCS-MPCC (Ts = 10 us),0,76,"scheduled, 9x9 LUT (nearest node)",LUT (per operating point),4.1995,2.3156,12.8291,10.4633,0.1054,,16.7959
+rel5,"5 % of demanded torque, floor 3 N m (relative)",FCS-MPCC (Ts = 10 us),0,76,best single setting,FCS Ts=10us lam_sw=100,4.3853,2.0361,11.2057,11.219,0.0,,
+rel5,"5 % of demanded torque, floor 3 N m (relative)","FCS-MPCC (Ts, lam_sw)",0,76,"scheduled, ideal (per WLTC sample)",continuous schedule,4.09,2.3126,12.177,10.5801,0.0,0.0,14.4958
+rel5,"5 % of demanded torque, floor 3 N m (relative)","FCS-MPCC (Ts, lam_sw)",0,76,"scheduled, 9x9 LUT (nearest node)",LUT (per operating point),4.1703,2.348,12.8665,10.401,0.1054,,15.9847
+rel5,"5 % of demanded torque, floor 3 N m (relative)","FCS-MPCC (Ts, lam_sw)",0,76,best single setting,FCS Ts=10us lam_sw=100,4.3853,2.0361,11.2057,11.219,0.0,,
+rel5f2,"5 % of demanded torque, floor 2 N m (relative)",PI-SVPWM,0,76,"scheduled, ideal (per WLTC sample)",continuous schedule,3.8764,1.884,9.4611,10.9186,0.0,0.0,0.0
+rel5f2,"5 % of demanded torque, floor 2 N m (relative)",PI-SVPWM,0,76,"scheduled, 9x9 LUT (nearest node)",LUT (per operating point),3.8906,1.8905,9.3077,11.0449,0.0785,,0.0
+rel5f2,"5 % of demanded torque, floor 2 N m (relative)",PI-SVPWM,0,76,best single setting,PI-SVPWM 15 kHz,4.768,1.339,7.4973,14.9999,0.0,,
+rel5f2,"5 % of demanded torque, floor 2 N m (relative)",PI-DPWM1,9,76,"scheduled, ideal (per WLTC sample)",continuous schedule,3.8373,2.1789,11.4719,11.7917,0.4093,0.4093,-1.009
+rel5f2,"5 % of demanded torque, floor 2 N m (relative)",PI-DPWM1,9,76,"scheduled, 9x9 LUT (nearest node)",LUT (per operating point),3.8215,2.2332,11.6454,11.731,0.5115,,-1.776
+rel5f2,"5 % of demanded torque, floor 2 N m (relative)",PI-DPWM1,9,76,best single setting,none feasible at every node,,,,,,,
+rel5f2,"5 % of demanded torque, floor 2 N m (relative)",PI-DPWM-I,9,76,"scheduled, ideal (per WLTC sample)",continuous schedule,3.7013,2.1969,11.5554,11.5768,0.4093,0.4093,-4.5174
+rel5f2,"5 % of demanded torque, floor 2 N m (relative)",PI-DPWM-I,9,76,"scheduled, 9x9 LUT (nearest node)",LUT (per operating point),3.6912,2.2482,11.7165,11.5418,0.5121,,-5.1265
+rel5f2,"5 % of demanded torque, floor 2 N m (relative)",PI-DPWM-I,9,76,best single setting,none feasible at every node,,,,,,,
+rel5f2,"5 % of demanded torque, floor 2 N m (relative)",FCS-MPCC (Ts = 10 us),3,76,"scheduled, ideal (per WLTC sample)",continuous schedule,4.3212,2.0231,10.5387,11.9209,0.053,0.053,11.4744
+rel5f2,"5 % of demanded torque, floor 2 N m (relative)",FCS-MPCC (Ts = 10 us),3,76,"scheduled, 9x9 LUT (nearest node)",LUT (per operating point),4.4367,1.9854,10.5053,12.1372,0.1015,,14.0364
+rel5f2,"5 % of demanded torque, floor 2 N m (relative)",FCS-MPCC (Ts = 10 us),3,76,best single setting,none feasible at every node,,,,,,,
+rel5f2,"5 % of demanded torque, floor 2 N m (relative)","FCS-MPCC (Ts, lam_sw)",3,76,"scheduled, ideal (per WLTC sample)",continuous schedule,4.2839,2.0686,10.5934,11.8263,0.053,0.053,10.5112
+rel5f2,"5 % of demanded torque, floor 2 N m (relative)","FCS-MPCC (Ts, lam_sw)",3,76,"scheduled, 9x9 LUT (nearest node)",LUT (per operating point),4.4076,2.0178,10.5427,12.0749,0.1015,,13.2867
+rel5f2,"5 % of demanded torque, floor 2 N m (relative)","FCS-MPCC (Ts, lam_sw)",3,76,best single setting,none feasible at every node,,,,,,,

@@ -1,0 +1,34 @@
+{
+  "random_sample_split": {
+    "n_train": 2940,
+    "n_val": 630,
+    "n_test": 630,
+    "mse_train": 1.016983043453582,
+    "mse_val": 1.0077928163699528,
+    "mse_test": 1.0401574596070866,
+    "epochs": 71
+  },
+  "condition_split": {
+    "n_train": 2975,
+    "n_val": 525,
+    "n_test": 700,
+    "mse_train": 0.880069417251467,
+    "mse_val": 1.0999896326861667,
+    "mse_test": 2.0521942936984576,
+    "epochs": 84,
+    "test_conditions": [
+      "L-20%@2500rpm,iq900",
+      "nominal@2500rpm,iq500",
+      "Rs+50%@2500rpm,iq500",
+      "psi-10%@500rpm,iq500"
+    ]
+  },
+  "best_fixed_pair": [
+    0.2,
+    5.0
+  ],
+  "label_ratio_counts": {
+    "0.04": 14,
+    "0.1": 10
+  }
+}

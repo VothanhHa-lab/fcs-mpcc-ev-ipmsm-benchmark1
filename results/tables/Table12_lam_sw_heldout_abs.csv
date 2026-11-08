@@ -1,0 +1,7 @@
+controller,P_loss_W,P_sw_W,T_rms_Nm,T_rms_max,f_sw_Hz,lam_sw_median,ripple_ok_frac
+PI-SVPWM 10 kHz,4721.15,670.57,2.13,2.96,9992.93,0.0,1.0
+PI-SVPWM 3.6 kHz,4253.54,243.03,5.75,8.63,3627.95,0.0,1.0
+FCS-MPCC lam_sw=0,5043.41,941.61,2.08,2.42,13340.91,0.0,1.0
+FCS-MPCC best fixed lam_sw,4342.56,255.07,6.66,7.36,3779.46,1000.0,1.0
+FCS-MPCC + LUT lam_sw,4342.56,255.07,6.66,7.36,3779.46,1000.0,1.0
+FCS-MPCC + NN lam_sw,4343.45,256.99,6.65,7.32,3802.86,998.07,1.0

@@ -1,0 +1,4 @@
+reference,fcs_noharm_Wh_per_km,ref_noharm_Wh_per_km,fcs_harm_nominal_Wh_per_km,ref_harm_nominal_Wh_per_km,breakeven_harmonic_multiplier,note
+PI-SVPWM 3.6 kHz,8.813,9.453,3.422,3.379,14.801,FCS (best fixed lam_sw) loses to the reference only if the harmonic iron part is multiplied by more than this
+PI-SVPWM 10 kHz,8.813,10.054,3.422,3.064,3.462,FCS (best fixed lam_sw) loses to the reference only if the harmonic iron part is multiplied by more than this
+FCS-MPCC lam_sw=0,8.813,10.933,3.422,3.519,inf,FCS (best fixed lam_sw) loses to the reference only if the harmonic iron part is multiplied by more than this

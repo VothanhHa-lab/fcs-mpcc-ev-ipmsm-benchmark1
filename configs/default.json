@@ -1,0 +1,153 @@
+{
+  "_note": "SI units. Tesla Model 3 (2018) rear drive unit IPM motor + Model 3 RWD vehicle. Every value carries a source tag: [MXP] MotorXP measurement/analysis whitepaper; [EVS] evspecifications.com / public spec sheets; [DER] derived here from [MXP] data (see scripts/derive_tesla_params.py); [ASM] assumption made in this study.",
+  "motor": {
+    "Rs": 0.00475,
+    "_Rs": "[MXP] phase resistance at 20 C",
+    "p": 3,
+    "_p": "[MXP] pole pairs",
+    "psi_f": 0.077186,
+    "_psi_f": "[DER] from back-EMF constant 42 Vpk,LL/krpm [MXP]",
+    "Ld": 8.106e-05,
+    "_Ld": "[DER] solved from MXP peak point (430 Nm, 1000 Arms, 53.5 deg advance, 94.61 Vrms at 192 kW); SATURATED value at peak load",
+    "Lq": 0.00011309,
+    "_Lq": "[DER] same as Ld",
+    "Imax": 1414.0,
+    "_Imax": "[MXP] 1000 Arms -> 1414 A peak",
+    "J_rotor": 0.0484,
+    "_J_rotor": "[DER] solid-lamination estimate from MXP rotor OD/ID/stack length (magnet slots ignored)",
+    "B": 0.002,
+    "_B": "[ASM]",
+    "T_peak": 430.0,
+    "_T_peak": "[MXP] simulated peak torque 430 N m (published 420-450 N m); used as torque limit because the constant-L model would otherwise overestimate low-speed peak torque",
+    "P_peak": 211000.0,
+    "_P_peak": "[EVS] 211 kW rear motor, 2019 Model 3 SR RWD (MXP cites 190-211 kW)"
+  },
+  "inverter": {
+    "Vdc": 360.0,
+    "_Vdc": "[EVS] nominal pack voltage 360 V",
+    "dead_time": 5e-07,
+    "_dt": "[ASM] SiC-class dead time",
+    "Esw_ref": 0.03,
+    "_Esw": "[ASM] Eon+Eoff per phase-leg commutation at Vref, Iref (order of magnitude for a ~1 kA SiC leg; sensitivity reported)",
+    "Vref": 360.0,
+    "Iref": 1000.0,
+    "V0": 0.0,
+    "_V0": "[ASM] MOSFET: no knee voltage",
+    "r_on": 0.0015,
+    "_r_on": "[ASM] effective on-resistance per phase leg"
+  },
+  "vehicle": {
+    "m": 1611.0,
+    "_m": "[EVS] 2019 Model 3 Standard Range RWD curb weight",
+    "Cd": 0.23,
+    "_Cd": "[EVS]",
+    "G": 9.0,
+    "_G": "[EVS] axle ratio 9",
+    "Rw": 0.334,
+    "_Rw": "[ASM] 235/45R18 nominal radius",
+    "A": 2.22,
+    "_A": "[ASM] frontal area",
+    "Cr": 0.01,
+    "_Cr": "[ASM]",
+    "rho": 1.225,
+    "g": 9.81,
+    "v_max_kmh": 209.0,
+    "_v_max": "[EVS] top speed of 2019 Model 3 SR RWD"
+  },
+  "control": {
+    "Ts": 5e-05,
+    "_Ts": "manuscript sampling time",
+    "nsub": 200,
+    "log_div": 10,
+    "pi_bandwidth_hz": 800.0,
+    "speed_bandwidth_hz": 5.0,
+    "speed_div": 20,
+    "observer_bandwidth_hz": 10.0,
+    "sigma_i": 2.0,
+    "_sigma_i": "[ASM] current-sensor noise (A, 1 sigma)",
+    "sigma_w": 0.5,
+    "_sigma_w": "[ASM] speed noise (rpm, 1 sigma)",
+    "Ilim_hard_factor": 1.1
+  },
+  "paper_nn": {
+    "lam_min": 0.1,
+    "lam_max": 10.0,
+    "lam_grid": [
+      0.2,
+      0.5,
+      1.0,
+      2.0,
+      5.0
+    ],
+    "hidden": 10,
+    "lr": 0.001,
+    "alpha": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "ext_sw": {
+    "lam_sw_grid": [
+      0.0,
+      30.0,
+      100.0,
+      300.0,
+      1000.0,
+      3000.0
+    ],
+    "log_lo": 1.0,
+    "log_hi": 4.0,
+    "ripple_limit_pct_of_peak": 3.0
+  },
+  "iron": {
+    "_note": "Stator iron-loss model (src/aifcs/ironloss.py). Tags as above. NO FEA and NO manufacturer datasheet was available: every value tagged [ASM] is an assumption; sensitivity is reported.",
+    "geometry": {
+      "D_out": 0.225,
+      "_D_out": "[MXP] stator lamination OD",
+      "D_bore": 0.1513,
+      "_D_bore": "[MXP] stator lamination ID (bore)",
+      "L_stack": 0.134,
+      "_L_stack": "[MXP] stack length",
+      "k_stack": 0.95,
+      "_k_stack": "[ASM] stacking factor (request: ~0.95)",
+      "Q": 54,
+      "_Q": "[MXP] stator slots",
+      "tooth_width": 0.0056,
+      "_tooth_width": "[ASM] parallel-sided tooth width; chosen so that no-load peak tooth B ~1.66 T (target 1.6-1.7 T)",
+      "yoke_height": 0.018,
+      "_yoke_height": "[ASM] stator back-iron radial height; chosen so that no-load peak yoke B ~1.48 T (target 1.4-1.5 T). Slot depth = (D_out-D_bore)/2 - yoke_height. Tooth tips neglected",
+      "rho_steel": 7650.0,
+      "_rho_steel": "[ASM] request: steel density 7650 kg/m3"
+    },
+    "winding": {
+      "turns_per_coil": 2,
+      "_turns_per_coil": "[MXP] as stated in the task brief",
+      "parallel_paths": 3,
+      "_parallel_paths": "[MXP] as stated in the task brief",
+      "coils_per_phase": 18,
+      "_coils_per_phase": "[ASM] double-layer, one coil per slot: 54 coils / 3 phases",
+      "k_w1": 0.95,
+      "_k_w1": "[ASM] fundamental winding factor (q=3 slots/pole/phase, short pitch unknown); typical 0.93-0.96"
+    },
+    "material": {
+      "alpha": 2.0,
+      "_alpha": "[ASM] hysteresis exponent. Must be 2.0 for the harmonic (Parseval) hysteresis sum",
+      "k_h": 0.01067,
+      "_k_h": "[ASM] W s/(kg T^2). With k_c, k_e: P(1.5 T, 50 Hz) = 1.7 W/kg and P(1.0 T, 400 Hz) = 13.5 W/kg, typical 0.30 mm NO FeSi class. No datasheet cited; plausible range 0.007-0.015",
+      "k_c": 3.87e-05,
+      "_k_c": "[DER] classical eddy coefficient pi^2 sigma d^2/(6 rho_steel) with d = 0.30 mm, sigma = 2.0 MS/m (applied to B in T, f in Hz: W/kg per (f B)^2)",
+      "k_e": 0.00038,
+      "_k_e": "[ASM] W/kg per (f B)^1.5; plausible range 2e-4 - 8e-4",
+      "thickness": 0.0003,
+      "_thickness": "[ASM] lamination thickness 0.30 mm",
+      "sigma": 2000000.0,
+      "_sigma": "[ASM] electrical conductivity of Si steel, S/m (ro = 0.5 uOhm m)",
+      "mu_r_eff": 300.0,
+      "_mu_r_eff": "[ASM] effective incremental relative permeability for lamination skin-effect screening of the PWM harmonics (only harmonics above ~15 kHz are materially screened)",
+      "build_factor": 1.7,
+      "_build_factor": "[ASM] manufacturing/building factor (punching, welding, shrink fit), typical 1.5-2.0, multiplies all stator iron loss"
+    }
+  }
+}

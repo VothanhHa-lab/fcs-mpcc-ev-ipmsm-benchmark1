@@ -1,0 +1,20 @@
+family,label,nodes_failing_torque_tracking,of_nodes
+PI-SVPWM,1 kHz,43,76
+PI-SVPWM,1.5 kHz,30,76
+PI-SVPWM,2 kHz,23,76
+PI-SVPWM,2.5 kHz,11,76
+PI-DPWM1,1 kHz,43,76
+PI-DPWM1,1.5 kHz,30,76
+PI-DPWM1,2 kHz,22,76
+PI-DPWM1,2.5 kHz,11,76
+PI-DPWM-I,1 kHz,43,76
+PI-DPWM-I,1.5 kHz,30,76
+PI-DPWM-I,2 kHz,23,76
+PI-DPWM-I,2.5 kHz,11,76
+FCS Ts=10us,lam_sw=3000,25,76
+FCS Ts=10us,lam_sw=10000,48,76
+FCS Ts=20us,lam_sw=1000,5,76
+FCS Ts=20us,lam_sw=3000,15,76
+FCS Ts=20us,lam_sw=10000,33,76
+FCS Ts=50us,lam_sw=3000,19,76
+FCS Ts=50us,lam_sw=10000,31,76

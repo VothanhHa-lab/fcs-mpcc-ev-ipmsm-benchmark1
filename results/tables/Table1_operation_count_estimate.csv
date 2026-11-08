@@ -1,0 +1,6 @@
+controller,flops_est,transcendental,note
+PI-SVPWM,60,"sin, cos",2 PI + decoupling + Park^-1 + min-max SVPWM
+Deadbeat-SVPWM,90,"2x(sin, cos)",delay comp. + 1-step inverse model + SVPWM
+FCS-MPCC,254,"2x(sin, cos)","delay comp. + 8 candidates x (rotation, prediction, cost)"
+AI-FCS-MPCC (paper),394,"2x(sin, cos) + 10 tanh + 2 exp",FCS + NN 4-10-2
+FCS-MPCC + NN lam_sw,316,"2x(sin, cos) + 6 tanh + exp + pow",FCS + NN 2-6-1 (can run at 1 kHz)

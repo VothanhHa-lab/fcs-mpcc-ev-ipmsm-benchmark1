@@ -1,0 +1,19 @@
+method,limit,carrier_set,loss_Wh_per_km,ripple_mean_Nm,ripple_rel_mean_pct,fsw_mean_kHz,viol_time_frac,infeasible_time_frac
+PI-SVPWM,abs3,carriers 1-20 kHz (used),3.1785,4.3652,19.6589,5.1562,0.0,0.0
+PI-SVPWM,abs3,carriers 2.5-20 kHz,3.2011,4.1372,19.1518,5.2705,0.0,0.0
+PI-SVPWM,abs1,carriers 1-20 kHz (used),3.3828,3.1085,16.1104,6.378,0.0,0.0
+PI-SVPWM,abs1,carriers 2.5-20 kHz,3.394,3.0524,15.9235,6.4284,0.0,0.0
+PI-SVPWM,rel5,carriers 1-20 kHz (used),3.5722,2.5292,13.3992,7.7081,0.0,0.0
+PI-SVPWM,rel5,carriers 2.5-20 kHz,3.5822,2.4896,13.2667,7.7496,0.0,0.0
+PI-DPWM1,abs3,carriers 1-20 kHz (used),2.9987,6.4471,28.3483,4.8161,0.0,0.0
+PI-DPWM1,abs3,carriers 2.5-20 kHz,3.0038,6.3104,28.0291,4.8514,0.0,0.0
+PI-DPWM1,abs1,carriers 1-20 kHz (used),3.3452,3.4465,18.4326,7.5986,0.0,0.0
+PI-DPWM1,abs1,carriers 2.5-20 kHz,3.3472,3.4191,18.3297,7.613,0.0,0.0
+PI-DPWM1,rel5,carriers 1-20 kHz (used),3.6319,2.5349,13.6191,10.1534,0.0,0.0
+PI-DPWM1,rel5,carriers 2.5-20 kHz,3.6328,2.5249,13.5712,10.1603,0.0,0.0
+PI-DPWM-I,abs3,carriers 1-20 kHz (used),2.9743,6.377,27.9659,4.8482,0.0,0.0
+PI-DPWM-I,abs3,carriers 2.5-20 kHz,2.9793,6.2406,27.6507,4.8831,0.0,0.0
+PI-DPWM-I,abs1,carriers 1-20 kHz (used),3.315,3.4084,18.2242,7.6027,0.0,0.0
+PI-DPWM-I,abs1,carriers 2.5-20 kHz,3.317,3.3815,18.1256,7.6167,0.0,0.0
+PI-DPWM-I,rel5,carriers 1-20 kHz (used),3.5377,2.5835,13.8634,9.9189,0.0,0.0
+PI-DPWM-I,rel5,carriers 2.5-20 kHz,3.5385,2.5739,13.8197,9.9255,0.0,0.0

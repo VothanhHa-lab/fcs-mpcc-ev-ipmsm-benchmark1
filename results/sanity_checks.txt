@@ -1,0 +1,42 @@
+PASS back-EMF magnitude (V)  we*psi=24.25 V (MXP: 42/sqrt3 per krpm = 24.25 V)
+PASS power balance P_elec - P_cu - P_mech  P_elec=33388 W, residual=-3.8 W
+PASS mean torque at 200 N m request  T_mean=199.1
+PASS h-convergence FCS T_rms (nsub 200 vs 400)  10.24 vs 10.14 N m
+PASS h-convergence PI T_rms (nsub 200 vs 400)  0.966 vs 0.940 N m
+PASS determinism (same seed)  
+PASS seed changes noise  
+PASS argmin invariant to common scaling of (lam_d, lam_q)  
+PASS RMSE hand check  0.7071 vs 0.7071
+PASS iq_avg hand check  
+PASS speed step reaches 1200 rpm  end=1200.0 rpm
+PASS settling not faster than physics  t_rec=631 ms > t_min=386 ms
+PASS FW: |v| needed <= Vdc/sqrt3  187 V, id*=-426 A
+PASS FW: 150 N m tracked at 10 000 rpm (PI)  T_mean=148.1
+PASS FW: 150 N m tracked at 10 000 rpm (FCS, Ts=10us)  T_mean=149.5
+PASS DPWM1: commutations ~ 2/3 of SVPWM at the same carrier  ratio=0.675
+PASS DPWM1: mean torque tracks the 200 N m request  T_mean=199.8
+PASS DPWM-I: commutations ~ 2/3 of SVPWM at the same carrier  ratio=0.675
+PASS DPWM-I: mean torque tracks the 200 N m request  T_mean=199.8
+PASS DPWM-I (current-based clamp) switching loss <= DPWM1 (voltage-based)  329 vs 367 W
+PASS DPWM1: 150 N m tracked at 10 000 rpm (field weakening)  T_mean=148.9
+PASS DPWM1/SVPWM torque-ripple ratio matches the ideal volt-second calculation (15 %)  simulated 1.95 vs ideal 1.96
+PASS PI bandwidth = min(800 Hz, fc/12) for all VSF carriers  
+PASS VSF LUT lookup returns a carrier of the allowed set (and the node value at nodes)  
+PASS scheduled carriers in Table16d are all members of the carrier set  912 LUT entries
+PASS iron: series turns/phase = 18 coils x 2 turns / 3 paths = 12  
+PASS iron: no-load peak tooth B in 1.6-1.7 T, yoke in 1.4-1.5 T  tooth 1.658 T, yoke 1.477 T, airgap fundamental 1.01 T
+PASS iron: stator iron mass plausible (10-25 kg)  tooth 5.55 kg + yoke 11.40 kg
+PASS iron: time-domain eddy/excess constants equal Bertotti k_c(fB)^2 + k_e(fB)^1.5 for sinusoidal flux  207.042 W vs closed form 207.042 W
+PASS iron: harmonic multiplier scales only the harmonic part  
+PASS dpsi/dt resolution (PI 10 kHz): finite-difference <|dpsi/dt|^2> within 85-100 % of the exact sub-step value  ratio 0.916 (exact 19418 V^2, 2.5 us finite difference 17785 V^2)
+PASS dpsi/dt resolution (PI 10 kHz): FFT of 400 kHz log resolves 90-110 % of harmonic <|dpsi/dt|^2>  0.926
+PASS dpsi/dt resolution (FCS Ts=10 us): finite-difference <|dpsi/dt|^2> within 85-100 % of the exact sub-step value  ratio 0.961 (exact 21705 V^2, 2.5 us finite difference 20858 V^2)
+PASS dpsi/dt resolution (FCS Ts=10 us): FFT of 400 kHz log resolves 90-110 % of harmonic <|dpsi/dt|^2>  1.037
+PASS iron: no-load fundamental part equals Bertotti closed form at B = K psi_f (1000 rpm)  50.4 W vs 50.4 W
+PASS iron: no load, PI 40 kHz vs 10 kHz: ripple flux linkage falls ~ 1/f_sw (ratio 0.15-0.45)  ratio 0.259
+PASS iron: no load, PI 40 kHz: minor-loop (harmonic) hysteresis < 2 % of hysteresis loss  0.26 %
+PASS iron: fundamental loss grows as f^n with 1 < n < 2 (no load, 1000-4000 rpm)  n = 1.31, P = 50/120/310 W
+PASS iron: PI carrier sweep 2.5 -> 10 -> 40 kHz: harmonic iron loss decreases monotonically  P_harm = 198 / 181 / 137 W
+PASS iron: PI carrier sweep: minor-loop hysteresis falls ~ 1/f_sw (ratio 2.5 kHz / 40 kHz > 10)  P_h_harm = 6.26 / 1.55 / 0.35 W
+PASS iron: FCS (lam_sw=0) Ts sweep 50 -> 12.5 us: f_sw rises and minor-loop hysteresis falls  f_sw = 3.0 / 5.7 / 11.3 kHz, P_h_harm = 7.59 / 3.47 / 1.73 W
+PASS iron: FCS (lam_sw=0) Ts sweep 50 -> 12.5 us: total harmonic iron loss does not increase  P_harm = 222 / 203 / 186 W

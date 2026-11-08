@@ -1,0 +1,7 @@
+controller,nominal,Esw x0.5,Esw x2,r_on x0.5,r_on x2
+FCS-MPCC + LUT lam_sw,2.82,2.47,3.51,2.56,3.32
+FCS-MPCC + NN lam_sw,2.83,2.48,3.52,2.57,3.34
+FCS-MPCC best fixed lam_sw,2.82,2.47,3.51,2.56,3.32
+FCS-MPCC lam_sw=0,4.93,3.58,7.65,4.67,5.46
+PI-SVPWM 10 kHz,4.08,3.14,5.96,3.82,4.61
+PI-SVPWM 3.6 kHz,3.66,3.25,4.48,3.32,4.34

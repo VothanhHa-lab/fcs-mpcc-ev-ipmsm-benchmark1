@@ -1,0 +1,6 @@
+loss_case,best_fixed_lam_sw
+nominal,1000.0
+Esw x0.5,1000.0
+Esw x2,1000.0
+r_on x0.5,1000.0
+r_on x2,1000.0
