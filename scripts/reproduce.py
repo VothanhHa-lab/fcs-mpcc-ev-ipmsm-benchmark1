@@ -171,8 +171,12 @@ ax[0].plot(r["log"][:, core.LT] * 1e3, r["log"][:, core.LLD], label=r"$\lambda_d
 ax[0].plot(r["log"][:, core.LT] * 1e3, r["log"][:, core.LLQ], label=r"$\lambda_q$")
 ax[0].set_ylabel("weight")
 ax[0].legend(fontsize=6)
-ax[1].plot(r["log"][:, core.LT] * 1e3, r["log"][:, core.LLD] / r["log"][:, core.LLQ], "k")
+ax[1].plot(r["log"][:, core.LT] * 1e3, r["log"][:, core.LLD] / r["log"][:, core.LLQ], "k",
+           label=r"$\rho=\lambda_d/\lambda_q$ (NN output)")
 ax[1].set_ylabel(r"$\lambda_d/\lambda_q$")
+ax[1].legend(fontsize=6, loc="upper left")
+for k_, a_ in enumerate(ax):
+    P.panel_label(a_, k_, x=-0.16)
 ax[1].set_xlabel("Time (ms)")
 fig.tight_layout()
 P.save(fig, FIG, "FigA_paper_NN_weights_S1")
@@ -252,6 +256,9 @@ ax[1].set_xlabel("Average device switching frequency (kHz)")
 ax[0].set_ylabel(r"Torque ripple RMS (N m)")
 ax[1].set_ylabel(r"Phase-current THD (%)")
 ax[0].legend(fontsize=6)
+ax[1].legend(fontsize=6)
+for k_, a_ in enumerate(ax):
+    P.panel_label(a_, k_, x=-0.12)
 fig.tight_layout()
 P.save(fig, FIG, "Fig8_ripple_vs_fsw")
 
@@ -316,9 +323,16 @@ for ax, (rpm_p, tq_p) in zip(axs, FSW_POINTS):
     ax.get_xaxis().set_major_formatter(matplotlib.ticker.ScalarFormatter())
     ax.xaxis.set_minor_formatter(matplotlib.ticker.NullFormatter())
     ax.set_xlabel("Average device switching frequency (kHz)")
-    ax.set_title(f"{rpm_p:.0f} rpm, {tq_p:.0f} N m (solid: with iron, dashed: Cu + inverter only)", fontsize=6)
+    ax.set_title(f"{rpm_p:.0f} rpm, {tq_p:.0f} N m", fontsize=7)
+from matplotlib.lines import Line2D  # noqa: E402
+hfam = [Line2D([0], [0], color=c_, marker="o", ms=3, label=f_) for f_, c_ in FAMCOL.items()]
+hsty = [Line2D([0], [0], color="0.3", lw=1.0, label="with stator iron loss"),
+        Line2D([0], [0], color="0.3", lw=0.7, ls="--", label="Cu + inverter only"),
+        Line2D([0], [0], color="k", marker="*", ls="", ms=7, label="loss optimum (with iron)")]
 axs[0].set_ylabel("Drive loss (W)")
-axs[0].legend(fontsize=5.5)
+for k_, a_ in enumerate(axs):
+    a_.legend(handles=hfam + hsty, fontsize=5, loc="upper left", framealpha=0.85)
+    P.panel_label(a_, k_, x=-0.12)
 fig.tight_layout()
 P.save(fig, FIG, "Fig11_total_loss_vs_fsw")
 
@@ -440,7 +454,13 @@ for row_i, (with_fe, rowlab) in enumerate([(False, "Cu + inv."), (True, "Cu + in
         ax.contour(MAP_RPM, MAP_T, np.ma.masked_invalid(eta).T, levels=[0.8, 0.9, 0.95], colors="w", linewidths=0.5)
         ax.plot(np.linspace(200, 9500, 60), env, "k-", lw=0.8)
         ax.set_title(f"{lab.replace('FCS-MPCC + NN lam_sw', 'FCS + NN lam_sw')}: {rowlab}", fontsize=6.5)
+        from matplotlib.lines import Line2D  # noqa: E402
+        ax.legend(handles=[Line2D([0], [0], color="k", lw=0.8, label="torque-speed envelope"),
+                           Line2D([0], [0], color="w", lw=0.8, label="efficiency 0.80 / 0.90 / 0.95")],
+                  fontsize=5, loc="upper right", facecolor="0.55", framealpha=0.9, labelcolor="w")
     axs[row_i, 0].set_ylabel("Torque (N m)")
+for k_, a_ in enumerate(axs.flat):
+    P.panel_label(a_, k_, x=-0.2, y=0.98)
 for ax in axs[1]:
     ax.set_xlabel("Speed (rpm)")
 fig.colorbar(cs, ax=axs, label="Efficiency (motoring, shaft / (shaft + losses))")
@@ -449,10 +469,14 @@ P.save(fig, FIG, "Fig7_efficiency_maps_simulated")
 print("[6] WLTC Class 3b quasi-static energy + inverter-loss sensitivity")
 dem = wltc.demand(cfg)
 fig, ax = plt.subplots(2, 1, figsize=(3.5, 2.6), sharex=True)
-ax[0].plot(dem["v"] * 3.6, "k", lw=0.5)
-ax[0].set_ylabel("km/h")
-ax[1].plot(dem["T"], "k", lw=0.4)
-ax[1].set_ylabel("Motor torque (N m)")
+ax[0].plot(dem["v"] * 3.6, "k", lw=0.5, label="WLTC Class 3b vehicle speed")
+ax[0].set_ylabel("Speed (km/h)")
+ax[0].legend(fontsize=6, loc="upper left")
+ax[1].plot(dem["T"], "k", lw=0.4, label="motor torque demand")
+ax[1].set_ylabel("Torque (N m)")
+ax[1].legend(fontsize=6, loc="upper left")
+for k_, a_ in enumerate(ax):
+    P.panel_label(a_, k_, x=-0.2)
 ax[1].set_xlabel("Time (s)")
 fig.tight_layout()
 P.save(fig, FIG, "FigB_WLTC_demand")

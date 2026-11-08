@@ -18,6 +18,12 @@ COL = {"PI-SVPWM": "#1f77b4", "Deadbeat-SVPWM": "#2ca02c", "FCS-MPCC (1,1)": "#f
        "PI-SVPWM 10 kHz": "#1f77b4"}
 
 
+def panel_label(ax, k, x=-0.13, y=1.02):
+    """Write (a), (b), ... at the upper left of an axis."""
+    ax.text(x, y, "(%s)" % "abcdefghij"[k], transform=ax.transAxes, fontsize=8, fontweight="bold",
+            va="bottom", ha="left")
+
+
 def save(fig, outdir, name):
     os.makedirs(outdir, exist_ok=True)
     fig.savefig(os.path.join(outdir, name + ".pdf"), bbox_inches="tight")
@@ -42,7 +48,9 @@ def step_panels(runs, labels, outdir, name, t_zoom=(0.020, 0.045)):
         ax.set_ylabel(r"$i_q$ (A)")
         ax.set_title(lab, fontsize=7, pad=2)
         ax.set_xlim(t_zoom[0] * 1e3, t_zoom[1] * 1e3)
-    axs[0].legend(loc="lower right", ncol=3, fontsize=6)
+        ax.legend(loc="lower right", ncol=3, fontsize=5.5, framealpha=0.85)
+    for k, ax in enumerate(axs):
+        panel_label(ax, k, x=-0.16)
     axs[-1].set_xlabel("Time (ms)")
     fig.tight_layout(h_pad=0.3)
     save(fig, outdir, name)
@@ -65,6 +73,12 @@ def vehicle_panels(runs, labels, outdir, name, t_lim=None):
     axs[2].set_ylabel(r"$T_e$, 1-ms avg (N m)")
     axs[2].set_xlabel("Time (s)")
     axs[0].legend(fontsize=6, loc="best")
+    from matplotlib.lines import Line2D
+    hh = [Line2D([0], [0], color=COL.get(l, "k"), lw=0.9, label=l) for l in labels]
+    axs[1].legend(handles=hh, fontsize=5, loc="best", ncol=2, title=r"$i_q$ (1-ms average)", title_fontsize=5.5)
+    axs[2].legend(handles=hh, fontsize=5, loc="best", ncol=2, title=r"$T_e$ (1-ms average)", title_fontsize=5.5)
+    for k, ax in enumerate(axs):
+        panel_label(ax, k, x=-0.17)
     if t_lim:
         axs[2].set_xlim(*t_lim)
     fig.tight_layout(h_pad=0.3)
